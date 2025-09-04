@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Deepfake Detector",
+  "version": "0.1",
+  "description": "Check if a YouTube video might be a deepfake",
+  "permissions": ["tabs", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["contentScript.js"]
+    }
+  ]
+}
